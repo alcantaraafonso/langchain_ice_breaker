@@ -28,7 +28,8 @@ def ice_breaker_with(name: str) -> Tuple[Summary, str]:
         template=summary_template,
         partial_variables={"format_instructions": summary_parser.get_format_instructions()})
     
-    llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")(llm=llm, prompt=summary_prompt_template)
+    llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
+
     # a linha de código abaixo se lê da seguinte forma:
     # "summary_prompt_template" é a entrada para o ChatOpenAI (LLM), que é a entrada para o summary_parser
     # isso é um Syntax Sugar
